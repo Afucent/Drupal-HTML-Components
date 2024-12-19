@@ -1,2 +1,38 @@
-<a href="/Drupal-HTML-Components/quick-accessbar/">quick-accessbar</a>
-<a href="/Drupal-HTML-Components/zoom-slider/">zoom-slider</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example Page</title>
+</head>
+<body>
+  <!-- Links -->
+  <a href="/Drupal-HTML-Components/quick-accessbar/">quick-accessbar</a>
+  <a href="/Drupal-HTML-Components/zoom-slider/">zoom-slider</a>
+
+  <!-- JavaScript to adjust URLs -->
+  <script>
+    // Check if we're on GitHub Pages or locally
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    
+    // Function to update links dynamically
+    function updateLinks() {
+      const links = document.querySelectorAll('a');
+      links.forEach(link => {
+        // If we are on GitHub Pages, adjust the links
+        if (isGitHubPages) {
+          link.href = '/<your-repository-name>' + link.getAttribute('href');
+        } 
+        // If we're local, use the path as is
+        else {
+          // The local folder structure already matches the relative paths
+          // so we don't need to modify it here
+        }
+      });
+    }
+
+    // Run the function to update the links
+    updateLinks();
+  </script>
+</body>
+</html>
