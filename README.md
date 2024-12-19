@@ -1,4 +1,4 @@
-# HTML, CSS, and JavaScript Components
+# HTML Components
 
 This repository contains raw HTML, CSS, and JavaScript files designed to create reusable components/modules for CMS platforms such as Drupal, AEM, and others. The goal is to provide clean, modular, and easily integrable components for various web projects.
 
@@ -27,21 +27,13 @@ project/
 
 1. Copy the `index.html` file into your project.
 
-2. Include the CSS and JavaScript within your project as follows:
-
-```html
-<link rel="stylesheet" href="path/to/index.css">
-<script src="path/to/index.js" defer></script>
-```
-
-3. Use the appropriate HTML structure from the `index.html` file to integrate the components into your project.
+2. Use the appropriate HTML structure from the `index.html` file to integrate the components into your project.
 
 4. Modify styles and scripts as needed to match your design requirements.
 
 ## Code Standards
 
 - **HTML**: Follows semantic HTML5 standards.
-- **CSS**: Uses modular class names based on the BEM methodology.
 - **JavaScript**: Clean and modular, avoiding global variables.
 
 ## Future Enhancements
