@@ -1,48 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dynamic Links</title>
-</head>
-<body>
-  <div id="links-container"></div> <!-- This will hold the dynamic links -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Links</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f9f9f9;
+        color: #313435;
+      }
 
-  <!-- JavaScript to dynamically generate links -->
-  <script>
-    // Predefined folder names (if these follow a pattern)
-    const folderNames = [
-      "quick-accessbar", 
-      "zoom-slider",
-    ];
+      #links-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
 
-    // Check if we're on GitHub Pages or locally
-    const isGitHubPages = window.location.hostname.includes('github.io');
-    
-    // Function to generate links based on folder names
-    function generateLinks() {
-      const container = document.getElementById('links-container');
-      folderNames.forEach(folder => {
-        // Create a new anchor tag
-        const link = document.createElement('a');
-        link.textContent = folder;
+      .link-button {
+        padding: 10px 20px;
+        text-decoration: none;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        white-space: nowrap;
+        text-transform: capitalize; /* Capitalize button text */
+      }
 
-        // If we're on GitHub Pages, adjust the links
-        if (isGitHubPages) {
-          const repositoryName = 'my-repository'; // Replace with your repository name
-          link.href = `/Drupal-HTML-Components/${folder}/`; // Adjust URL for GitHub Pages
-        } else {
-          link.href = `/${folder}/`; // Use relative path for local
-        }
+      .link-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
 
-        // Append the link to the container
-        container.appendChild(link);
-        container.appendChild(document.createElement('br')); // Add line break between links
-      });
-    }
+  <body>
+    <h1>Website Components</h1>
+    <p>Click on the buttons below to preview the components:</p>
 
-    // Call the function to generate the links
-    generateLinks();
-  </script>
-</body>
+    <div id="links-container"></div>
+
+    <script>
+      const folderNames = ["quick-accessbar", "zoom-slider"];
+
+      const isGitHubPages = window.location.hostname.includes("github.io");
+
+      function generateLinks() {
+        const container = document.getElementById("links-container");
+
+        folderNames.forEach((folder) => {
+          const link = document.createElement("a");
+          link.textContent = folder.replace(/-/g, " "); // Format folder name
+          link.className = "link-button";
+
+          if (isGitHubPages) {
+            const repositoryName = "my-repository"; // Replace with your repository name
+            link.href = `/Drupal-HTML-Components/${folder}/`;
+          } else {
+            link.href = `/${folder}/`;
+          }
+
+          container.appendChild(link);
+        });
+      }
+
+      generateLinks();
+    </script>
+  </body>
 </html>
