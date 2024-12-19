@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordian Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .drupal-about-section-expand-section {
+      display: flex;
+      flex-direction: row;
+      background-color: #002c6e;
+      color: white;
+      padding: 40px;
+    }
+
+    .drupal-about-section-expand-section img {
+      width: 250px;
+      border-radius: 8px;
+    }
+
+    .drupal-about-section-expand-content {
+      margin-left: 40px;
+      flex-grow: 1;
+    }
+
+    .drupal-about-section-expand-title {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .drupal-about-section-expand-description {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .drupal-accordion-section-expand {
+      border: none;
+      margin-bottom: 10px;
+      background: none;
+      cursor: pointer;
+      padding: 10px 0;
+      color: white;
+      font-size: 18px;
+      text-align: left;
+      width: 100%;
+      border-bottom: 1px solid #ffffff55;
+      outline: none;
+    }
+
+    .drupal-accordion-section-expand.active {
+      font-weight: 600;
+    }
+
+    .drupal-accordion-section-expand:after {
+      content: '+';
+      font-size: 18px;
+      float: right;
+    }
+
+    .drupal-accordion-section-expand.active:after {
+      content: '-';
+    }
+
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      padding-left: 15px;
+      color: #cfd8ec;
+    }
+
+    .panel p {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    /* responsiveness */
+     /* Responsiveness */
+     @media (max-width: 768px) {
+      .drupal-about-section-expand-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .drupal-about-section-expand-section img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .drupal-about-section-expand-content {
+        margin-left: 0;
+        text-align: left;
+        margin-bottom: 10px;
+      }
+
+      .drupal-accordion-section-expand {
+        font-size: 16px;
+      }
+
+      .drupal-about-section-expand-title {
+        font-size: 20px;
+      }
+
+      .drupal-about-section-expand-description {
+        font-size: 12px;
+      }
+    }
+
+    /* For very small screens */
+    @media (max-width: 480px) {
+      .drupal-accordion-section-expand {
+        font-size: 14px;
+      }
+
+        .drupal-about-section-expand-image {
+            display : none;
+        }
+
+      .panel p {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="drupal-about-section-expand-section">
+  <img src="https://via.placeholder.com/250" alt="Team Member" class="drupal-about-section-expand-image">
+  <div class="drupal-about-section-expand-content">
+    <h2>Accordian Section</h2>
+    <p class="drupal-about-section-expand-description">
+      Dell Technologies helps organizations and individuals build their digital future and transform how they work, live, and play. We provide customers with the industry’s broadest and most innovative technology and services portfolio for the AI era.
+    </p>
+    <button class="drupal-accordion-section-expand">01 How We Work & Lead</button>
+    <div class="panel">
+      <p>Details how we work and lead.</p>
+    </div>
+
+    <button class="drupal-accordion-section-expand">02 How We Hire</button>
+    <div class="panel">
+      <p>Details our hiring process.</p>
+    </div>
+
+    <button class="drupal-accordion-section-expand">03 Career Development</button>
+    <div class="panel">
+      <p>Details career development opportunities.Details drupal-about-section-expand career development opportunities.Details drupal-about-section-expand career development opportunities.Details drupal-about-section-expand career development opportunities.Details drupal-about-section-expand career development opportunities.Details drupal-about-section-expand career development opportunities.Details drupal-about-section-expand career development opportunities.Details drupal-about-section-expand career development opportunities.Details drupal-about-section-expand career development opportunities.</p>
+    </div>
+
+    <button class="drupal-accordion-section-expand">04 Diversity & Inclusion</button>
+    <div class="panel">
+      <p>Details diversity and inclusion.</p>
+    </div>
+
+    <button class="drupal-accordion-section-expand">05 Environmental & Social Governance</button>
+    <div class="panel">
+      <p>Details environmental and social governance.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const drupal_accordion_section_expands = document.querySelectorAll('.drupal-accordion-section-expand');
+  
+      drupal_accordion_section_expands.forEach(drupal_accordion_section_expand => {
+        drupal_accordion_section_expand.addEventListener('click', function () {
+          // Close all panels first
+          drupal_accordion_section_expands.forEach(item => {
+            if (item !== this) {
+              item.classList.remove('active');
+              item.nextElementSibling.style.maxHeight = null;
+            }
+          });
+  
+          // Toggle the clicked drupal_accordion_section_expand
+          this.classList.toggle('active');
+          const panel = this.nextElementSibling;
+  
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+<a href="/accordion/acc2.html">Version 2 </a>
