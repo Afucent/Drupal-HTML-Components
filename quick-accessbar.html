@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drupal-quick-accessbar Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    
+body {
+  margin: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: #333;
+}
+
+.drupal-quick-accessbar-container {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} 
+
+.drupal-quick-accessbar-content {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.drupal-quick-accessbar-section {
+  margin-bottom: 20px;
+}
+
+.drupal-quick-accessbar-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.drupal-quick-accessbar-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drupal-quick-accessbar-section ul li a {
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+  display: inline-block; 
+  margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 2px; 
+}
+
+.drupal-quick-accessbar-section ul li a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  border-bottom: 1px dotted #666; 
+}
+
+.drupal-quick-accessbar-section ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #000;
+  transition: width 0.4s ease;
+}
+
+.drupal-quick-accessbar-section ul li a:hover::after {
+  width: 100%; 
+}
+
+.drupal-quick-accessbar-section ul li a:hover {
+  color: #000;
+}
+
+.drupal-quick-accessbar-connect {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.drupal-quick-accessbar-connect a {
+  font-size: 18px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.drupal-quick-accessbar-connect a:hover {
+  color: #0078d4;
+}
+
+.drupal-quick-accessbar-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.drupal-quick-accessbar-region-select {
+  margin-top: 10px;
+}
+
+.drupal-quick-accessbar-region-select select {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- drupal-quick-accessbar Section -->
+  <drupal-quick-accessbar class="drupal-quick-accessbar-container">
+    <div class="drupal-quick-accessbar-content">
+
+      <!-- Company Section -->
+      <div class="drupal-quick-accessbar-section">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="#">Navigate your next</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">ESG</a></li>
+          <li><a href="#">Investors</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Alumni</a></li>
+        </ul>
+      </div>
+
+      <!-- Subsidiaries Section -->
+      <div class="drupal-quick-accessbar-section">
+        <h3>Subsidiaries</h3>
+        <ul>
+          <li><a href="#">EdgeVerve Systems</a></li>
+          <li><a href="#">Afucent BPM</a></li>
+          <li><a href="#">Afucent Consulting</a></li>
+          <li><a href="#">Afucent Public Services</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs Section -->
+      <div class="drupal-quick-accessbar-section">
+        <h3>Programs</h3>
+        <ul>
+          <li><a href="#">Afucent Foundation</a></li>
+          <li><a href="#">Afucent Foundation USA</a></li>
+          <li><a href="#">Afucent Science Foundation</a></li>
+          <li><a href="#">Afucent Leadership Institute</a></li>
+        </ul>
+      </div>
+
+      <!-- Support Section -->
+      <div class="drupal-quick-accessbar-section">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="#">Privacy Statement</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Safe Harbour Provision</a></li>
+          <li><a href="#">Site Map</a></li>
+          <li><a href="#">Modern Slavery Statement</a></li>
+          <li><a href="#">Payment Guide for Suppliers</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </drupal-quick-accessbar>
+
+</body>
+</html>
